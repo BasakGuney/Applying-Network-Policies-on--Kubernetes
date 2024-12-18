@@ -116,7 +116,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: nginx1-outgoing
-  namespace: <deneme>
+  namespace: <namespace>
 spec:
   podSelector:
     matchLabels:
@@ -131,14 +131,14 @@ spec:
 ```
 <br>
 
-To allow outgoing traffic from nginx1 in nginx2: 
+To allow incoming traffic from nginx1 in nginx2: 
 
 ```txt 
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: app-auto-nginx2
-  namespace: app-auto
+  name: nginx2-incoming
+  namespace: <namespace>
 spec:
   podSelector:
     matchLabels:
